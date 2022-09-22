@@ -17,16 +17,26 @@ import javax.persistence.Table;
 
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
+import com.projetoentra21.AppFii.enums.StatusLancamento;
 import com.projetoentra21.AppFii.enums.TipoLancamento;
+
+import lombok.Builder;
+import lombok.Data;
 
 @Entity
 @Table(name = "lancamento", schema ="appfii")
+@Builder
+@Data
 public class Lancamento {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Long id;
+	
+	
+	@Column(name = "descricao")
+	private String descricao;
 	
 	@Column(name ="mes")
 	private Integer mes;
@@ -50,5 +60,15 @@ public class Lancamento {
 	@Column(name = "tipo")
 	@Enumerated(value = EnumType.STRING)
 	private TipoLancamento tipo;
+	
+	
+	@Column (name = "status")
+	@Enumerated(value = EnumType.STRING)
+	private StatusLancamento status;
+
+
+
+	
+	
 
 }
