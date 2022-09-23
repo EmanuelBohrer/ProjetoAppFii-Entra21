@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Entity
 @Table(name = "usuarios", schema="appfii")
-@Builder	
+@Builder
 @Data
 public class Usuario {
 	
@@ -30,6 +30,8 @@ public class Usuario {
 	
 	@Column(name = "senha")
 	private String senha;
+	
+	
 	
 	
 

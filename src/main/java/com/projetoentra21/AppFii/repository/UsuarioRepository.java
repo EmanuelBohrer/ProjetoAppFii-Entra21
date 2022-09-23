@@ -6,6 +6,8 @@ import com.projetoentra21.AppFii.models.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario,Long>{
 	
+	boolean existsByEmail(String email);
+	
 	
 
 }
